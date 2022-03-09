@@ -120,7 +120,7 @@ export default function Home({
                             <div className="absolute top-0 bottom-0 right-0 border-l border-indigo-500"></div>
                         </div>
                         {/* <!-- Contents --> */}
-                        <div className="relative flex w-full gap-6 overflow-x-auto snap-x snap-mandatory pb-14 overscroll-contain">
+                        <div className="relative flex w-full gap-6 overflow-x-auto snap-x snap-mandatory pb-14 overscroll-contain scroll-smooth">
                             {sampleImages.map((image, index) => {
                                 return (
                                     <div
