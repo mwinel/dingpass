@@ -82,5 +82,6 @@ export async function getStaticProps() {
             popularExperiences: shuffleArray(experiences),
             exploreData: shuffleArray(exploreData),
         },
+        revalidate: 1
     };
 }
