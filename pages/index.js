@@ -88,7 +88,7 @@ export default function Home({
                 <SectionSubtitle>
                     Find your next adventure by a location near you
                 </SectionSubtitle>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {exploreData?.map((experience) => {
                         return (
                             <SmallCard
@@ -103,8 +103,8 @@ export default function Home({
             </section>
 
             <section>
-                <div className="not-prose relative bg-slat-50 rounded-xl overflow-hidden">
-                    <div className="relative rounded-xl overflow-auto">
+                <div className="relative overflow-hidden not-prose bg-slat-50 rounded-xl">
+                    <div className="relative overflow-auto rounded-xl">
                         {/* <!-- Snap Point --> */}
                         <div className="flex items-end justify-start pt-10 mb-6">
                             {/* <div className="rounded font-mono text-[0.625rem] leading-6 px-1.5 ring-1 ring-inset bg-indigo-50 text-indigo-600 ring-indigo-600 dark:bg-indigo-500 dark:ring-0 dark:text-white dark:highlight-white/10">
@@ -120,12 +120,12 @@ export default function Home({
                             <div className="absolute top-0 bottom-0 right-0 border-l border-indigo-500"></div>
                         </div>
                         {/* <!-- Contents --> */}
-                        <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto pb-14 overscroll-contain">
+                        <div className="relative flex w-full gap-6 overflow-x-auto snap-x snap-mandatory pb-14 overscroll-contain">
                             {sampleImages.map((image, index) => {
                                 return (
                                     <div
                                         className={classNames(
-                                            'scroll-mx-6 shrink-0 w-full lg:w-3/12 h-72 bg-red-100 flex items-center justify-center rounded-lg',
+                                            'scroll-mx-6 shrink-0 w-full lg:w-3/12 h-72 bg-red-100 flex items-center justify-center rounded-lg transition duration-300',
                                             index === 0
                                                 ? 'snap-start'
                                                 : 'snap-center',
@@ -140,13 +140,13 @@ export default function Home({
                             })}
                         </div>
                     </div>
-                    <div className="absolute inset-0 pointer-events-none border border-black/5 rounded-xl dark:border-white/5"></div>
+                    <div className="absolute inset-0 border pointer-events-none border-black/5 rounded-xl dark:border-white/5"></div>
                 </div>
             </section>
 
             <section>
-                <div className="not-prose relative bg-slat-50 rounded-xl overflow-hidden">
-                    <div className="relative rounded-xl overflow-auto">
+                <div className="relative overflow-hidden not-prose bg-slat-50 rounded-xl">
+                    <div className="relative overflow-auto rounded-xl">
                         {/* <!-- Snap Point --> */}
                         <div className="flex items-end justify-start pt-10 mb-6">
                             {/* <div className="rounded font-mono text-[0.625rem] leading-6 px-1.5 ring-1 ring-inset bg-indigo-50 text-indigo-600 ring-indigo-600 dark:bg-indigo-500 dark:ring-0 dark:text-white dark:highlight-white/10">
@@ -162,7 +162,7 @@ export default function Home({
                             <div className="absolute top-0 bottom-0 right-0 border-l border-indigo-500"></div>
                         </div>
                         {/* <!-- Contents --> */}
-                        <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto pb-14 overscroll-contain">
+                        <div className="relative flex w-full gap-6 overflow-x-auto snap-x snap-mandatory pb-14 overscroll-contain">
                             {sampleImages.map((image, index) => {
                                 return (
                                     <div
@@ -179,7 +179,7 @@ export default function Home({
                                         <Image
                                             width={369}
                                             height={180}
-                                            className="shrink-0 rounded-lg shadow-xl bg-white object-cover"
+                                            className="object-cover bg-white rounded-lg shadow-xl shrink-0"
                                             alt={image.url}
                                             src={image.url}
                                         />
@@ -188,7 +188,7 @@ export default function Home({
                             })}
                         </div>
                     </div>
-                    <div className="absolute inset-0 pointer-events-none border border-black/5 rounded-xl dark:border-white/5"></div>
+                    <div className="absolute inset-0 border pointer-events-none border-black/5 rounded-xl dark:border-white/5"></div>
                 </div>
             </section>
 
