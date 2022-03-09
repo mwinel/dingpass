@@ -3,7 +3,7 @@ import { SearchIcon } from '@heroicons/react/solid';
 export default function Search() {
     return (
         <div className="relative z-0 flex items-center justify-center flex-1 px-2 sm:absolute sm:inset-0">
-            <div className="w-full sm:max-w-md">
+            <div className="w-full sm:w-80 lg:max-w-md">
                 <label htmlFor="search" className="sr-only">
                     Search
                 </label>
