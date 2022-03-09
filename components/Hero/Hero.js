@@ -35,7 +35,7 @@ export default function Hero({ video }) {
                         </Button>
                     </div>
                     </div>
-                    <div className="absolute left-0 right-0 flex w-full px-4 sm:justify-end bottom-4">
+                    <div className="absolute left-0 right-0 flex w-full px-4 sm:justify-end bottom-6 md:bottom-4">
                         <small className="text-white underline cursor-pointer font-extralight">
                             {video.caption}
                         </small>
