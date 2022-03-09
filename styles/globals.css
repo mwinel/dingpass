@@ -23,11 +23,11 @@
     }
 
     h4 {
-        @apply text-lg font-semibold font-poppins;
+        @apply text-lg font-medium font-poppins;
     }
 
     p {
-        @apply text-[14px];
+        @apply text-[14px] md:text-base;
     }
 
     input {

@@ -12,13 +12,13 @@ export default function PopularExperieceCard({ item }) {
     }
 
     return (
-        <div className="relative cursor-pointer">
+        <div className="relative transition duration-300 rounded-lg shrink-0 snap-start w-[18.35rem]">
             {badgeText && (
-                <div className="absolute z-10 px-2 py-1 bg-white rounded top-2 left-2">
-                    <p className="mt-0.5 text-sm font-semibold">{badgeText}</p>
+                <div className="absolute z-10 px-2 bg-white rounded py-0.5 top-2 left-2">
+                    <p className="mt-0.5 text-[13px] font-semibold">{badgeText}</p>
                 </div>
             )}
-            <div className="relative w-full rounded-lg h-80">
+            <div className="relative rounded-lg w-[18.35rem] h-[18.35rem]">
                 <Image
                     src={shuffleArray(item.images)[0].url}
                     alt={item.title}
