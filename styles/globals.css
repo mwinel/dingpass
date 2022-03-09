@@ -27,7 +27,7 @@
     }
 
     p {
-        @apply text-base;
+        @apply text-[14px];
     }
 
     input {
@@ -39,7 +39,7 @@
     }
 
     section {
-        @apply px-4 mx-auto max-w-7xl sm:px-4 mt-10 mb-16 md:mb-20;
+        @apply px-2 mx-auto max-w-7xl sm:px-4 mt-10 mb-16 md:mb-20;
     }
 
     footer {

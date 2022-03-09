@@ -9,7 +9,7 @@ export default function PopularExperiences({ data }) {
     });
 
     return (
-        <section className="mt-16">
+        <section className="md:mt-16">
             <div className="flex items-center justify-between">
                 <div>
                     <SectionTitle>Most popular Experiences</SectionTitle>
@@ -18,11 +18,11 @@ export default function PopularExperiences({ data }) {
                         in your location.
                     </SectionSubtitle>
                 </div>
-                <div>
+                {/* <div>
                     <Button tertiary>Learn More</Button>
-                </div>
+                </div> */}
             </div>
-            <div className="grid grid-cols-4 gap-6 mt-6">{cards}</div>
+            <div className="grid grid-cols-2 gap-2 mt-6">{cards}</div>
         </section>
     );
 }

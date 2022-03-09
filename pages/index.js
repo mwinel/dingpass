@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import { Layout } from '../layouts';
 import {
     Hero,
@@ -36,15 +37,82 @@ const heroVideoBackgrounds = [
     },
 ];
 
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
 export default function Home({
-    backgroundVideo,
+    backgroundVideos,
     popularExperiences,
     exploreData,
 }) {
+    const ref = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const scroll = (scrollOffset) => {
+        ref.current.scrollLeft += scrollOffset;
+    };
+
     return (
         <Layout>
-            <Hero video={backgroundVideo} />
+            <Hero video={shuffleArray(backgroundVideos)[0]} />
             {/* <PopularExperiences data={popularExperiences} /> */}
+
+            <section className="mt-16">
+                <div className="flex gap-2 mb-4">
+                    <button
+                        className="bg-gray-100"
+                        onClick={() => {
+                            scroll(-200);
+                        }}
+                    >
+                        Prev
+                    </button>
+                    <button
+                        className="bg-gray-100"
+                        onClick={() => {
+                            scroll(200);
+                        }}
+                    >
+                        Next
+                    </button>
+                </div>
+                <div
+                    className="flex gap-6 overflow-x-auto snap-x snap-mandatory overscroll-contain scroll-smooth scrollbar-hide"
+                    ref={ref}
+                >
+                    {arr.map((item, index) => {
+                        return (
+                            <div
+                                className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start"
+                                key={index}
+                            >
+                                {item}
+                            </div>
+                        );
+                    })}
+                    {/* <div className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start">
+                        1
+                    </div>
+                    <div className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start">
+                        2
+                    </div>
+                    <div className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start">
+                        3
+                    </div>
+                    <div className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start">
+                        4
+                    </div>
+
+                    <div className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start">
+                        5
+                    </div>
+                    <div className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start">
+                        6
+                    </div>
+                    <div className="w-[18.35rem] bg-red-300 rounded-lg h-[18.35rem] shrink-0 snap-start">
+                        7
+                    </div> */}
+                </div>
+            </section>
 
             {/* <section className="mt-16">
                 <SectionTitle>Explore nearby places</SectionTitle>
@@ -78,10 +146,10 @@ export async function getStaticProps() {
 
     return {
         props: {
-            backgroundVideo: shuffleArray(heroVideoBackgrounds)[0],
+            backgroundVideos: heroVideoBackgrounds,
             popularExperiences: shuffleArray(experiences),
             exploreData: shuffleArray(exploreData),
         },
-        revalidate: 1
+        revalidate: 1,
     };
 }

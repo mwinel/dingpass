@@ -31,7 +31,7 @@ export default function Example() {
             {({ open }) => (
                 <>
                     <div className="px-2 mx-auto max-w-7xl sm:px-4">
-                        <div className="relative flex justify-between h-20">
+                        <div className="relative flex justify-between h-16 md:h-20">
                             <Brand />
                             <Search />
                             <MobileMenuButton open={open} />
